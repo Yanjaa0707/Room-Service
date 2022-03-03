@@ -70,5 +70,3 @@ def confirmation():
 order_starter()
 order_main()
 order_dessert()
-
-hi
