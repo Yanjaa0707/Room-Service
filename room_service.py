@@ -1,7 +1,9 @@
 guests = {'111':'Jay', '222':'Sunoo', '333':'Heeseung'}
 correct_info = False
 
+
 room = input ("Please, enter room number: ")
+room = room.lower()
 if room in guests.keys():
     correct_info = True
 else:
@@ -30,6 +32,7 @@ def order_starter():
         print("It will be", starterMenuPrice[order], 'dollars.')
     else:
         print("Invalid order, please check capitalization or if the item is in our menu.")
+    return order
 #main menu
 mainMenu = ['Pizza', 'Burger', 'Pasta']
 mainMenuPrice = {'Pizza':10, 'Burger':9, 'Pasta':11}
@@ -46,6 +49,7 @@ def order_main():
         print("It will be", mainMenuPrice[order_main], 'dollars.')
     else:
         print("Invalid order, please check capitalization or if the item is in our menu.")
+    return order_main
 #dessert menu
 dessertMenu = ['Ice cream', 'Ice tea', 'Milkshake']
 dessertMenuPrice = {'Ice cream':5, 'Ice tea':3, 'Milkshake':6}
@@ -62,11 +66,27 @@ def order_dessert():
         print("It will be", dessertMenuPrice[order_dessert], 'dollars.')
     else:
         print("Invalid order, please check capitalization or if the item is in our menu.")
+    return order_dessert
 
 #final confirmation
 def confirmation():
-    print("For confirmation, you ordered for starter", order, ". You ordered for main course", order_main, ". You ordered for dessert", order_dessert, ".")
+    print("For confirmation, you ordered for starter", order, ". You ordered for main course", orderMain, ". You ordered for dessert", orderDes, ". It will be delivered in the ", delivery.lower(), '.')
+
+#to contain the imnputs
+order = order_starter()
+orderMain = order_main()
+orderDes = order_dessert()
+
 
 order_starter()
 order_main()
 order_dessert()
+
+
+#confirm delivery time
+deliveryTime = ["Morning", 'Afternoon', 'Evening', 'Night']
+for time in deliveryTime:
+        print(time)
+delivery = input("When would you like it to be delivered? ")
+
+confirmation()
