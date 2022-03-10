@@ -1,7 +1,11 @@
+"""
+Yanjaa's Room Service chatbot
+"""
+
 guests = {'111':'Jay', '222':'Sunoo', '333':'Heeseung'}
 correct_info = False
 
-
+#ask for room number
 room = input ("Please, enter room number: ")
 room = room.lower()
 if room in guests.keys():
@@ -10,12 +14,12 @@ else:
     correct_info = False
 
 name = input ("Please, enter your name: ")
-
+#check if inputed name in in the guests list
 if correct_info and guests[room].lower() == name.lower():
     correct_info =  True
 else: correct_info = False
 
-#menus
+#food menus
 starterMenu = ['Salad', 'Tea', 'Sushi']
 starterMenuPrice = {'Salad':4, 'Tea':3, 'Sushi':10}
 
@@ -44,15 +48,15 @@ if order_main in mainMenu:
         print("It will be", mainMenuPrice[order_main], 'dollars.')
 else:
         print("Invalid order, please check capitalization or if the item is in our menu.")
+
 #dessert menu
 dessertMenu = ['Ice cream', 'Ice tea', 'Milkshake']
 dessertMenuPrice = {'Ice cream':5, 'Ice tea':3, 'Milkshake':6}
 
 #dessert order
-
 for food in dessertMenu:
         print(food)
-    #ask for order
+#ask for order
 order_dessert = input("What do you want for dessert? ")
 if order_dessert in dessertMenu:
         print("Your order is recorded.")
@@ -61,7 +65,7 @@ else:
         print("Invalid order, please check capitalization or if the item is in our menu.")
     
 
-#confirm delivery time
+#ask for delivery time
 deliveryTime = ["Morning", 'Afternoon', 'Evening', 'Night']
 for time in deliveryTime:
         print(time)
