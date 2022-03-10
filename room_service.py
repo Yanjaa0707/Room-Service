@@ -19,69 +19,47 @@ else: correct_info = False
 starterMenu = ['Salad', 'Tea', 'Sushi']
 starterMenuPrice = {'Salad':4, 'Tea':3, 'Sushi':10}
 
-# starter order function
-def order_starter():
     #stacks menu
-    for food in starterMenu:
-        print(food)
+for food in starterMenu:
+    print(food)
     #ask for order
-    order = input("What can I get you to get started? ")
+order = input("What can I get you to get started? ")
     #if order is there it gives response if not
-    if order in starterMenu:
-        print("Your order is recorded.")
-        print("It will be", starterMenuPrice[order], 'dollars.')
-    else:
-        print("Invalid order, please check capitalization or if the item is in our menu.")
-    return order
+if order in starterMenu:
+    print("Your order is recorded.")
+    print("It will be", starterMenuPrice[order], 'dollars.')
+else:
+    print("Invalid order, please check capitalization or if the item is in our menu.")
+    
 #main menu
 mainMenu = ['Pizza', 'Burger', 'Pasta']
 mainMenuPrice = {'Pizza':10, 'Burger':9, 'Pasta':11}
 
 #main course order
-def order_main():
-    #stack menu
-    for food in mainMenu:
+for food in mainMenu:
         print(food)
-    #ask for order
-    order_main = input("What will be your main course? ")
-    if order_main in mainMenu:
+order_main = input("What will be your main course? ")
+if order_main in mainMenu:
         print("Your order is recorded.")
         print("It will be", mainMenuPrice[order_main], 'dollars.')
-    else:
+else:
         print("Invalid order, please check capitalization or if the item is in our menu.")
-    return order_main
 #dessert menu
 dessertMenu = ['Ice cream', 'Ice tea', 'Milkshake']
 dessertMenuPrice = {'Ice cream':5, 'Ice tea':3, 'Milkshake':6}
 
 #dessert order
-def order_dessert():
-    #stack menu
-    for food in dessertMenu:
+
+for food in dessertMenu:
         print(food)
     #ask for order
-    order_dessert = input("What do you want for dessert? ")
-    if order_dessert in dessertMenu:
+order_dessert = input("What do you want for dessert? ")
+if order_dessert in dessertMenu:
         print("Your order is recorded.")
         print("It will be", dessertMenuPrice[order_dessert], 'dollars.')
-    else:
+else:
         print("Invalid order, please check capitalization or if the item is in our menu.")
-    return order_dessert
-
-#final confirmation
-def confirmation():
-    print("For confirmation, you ordered for starter", order, ". You ordered for main course", orderMain, ". You ordered for dessert", orderDes, ". It will be delivered in the ", delivery.lower(), '.')
-
-#to contain the imnputs
-order = order_starter()
-orderMain = order_main()
-orderDes = order_dessert()
-
-
-order_starter()
-order_main()
-order_dessert()
-
+    
 
 #confirm delivery time
 deliveryTime = ["Morning", 'Afternoon', 'Evening', 'Night']
@@ -89,4 +67,5 @@ for time in deliveryTime:
         print(time)
 delivery = input("When would you like it to be delivered? ")
 
-confirmation()
+#final confirmation
+print("For confirmation, you ordered for starter", order, ". You ordered for main course", order_main, ". You ordered for dessert", order_dessert, ". It will be delivered in the ", delivery.lower(), '.')
